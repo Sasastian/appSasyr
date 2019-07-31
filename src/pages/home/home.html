@@ -1,14 +1,54 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+<!-- <ion-content>
+  <ion-list inset>
+    <ion-item *ngFor="let user of users">
+      <h2>{{users}}</h2>
+      
+
+
+    </ion-item>
+  </ion-list>
+</ion-content> -->
+<ion-header >
+  <ion-navbar color="#3D1051">
+    <ion-title>SASYR - Acceso</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+	
+
+  <form style="padding-top: 20px;" [formGroup]="myForm" (ngSubmit)="getUsersv2()">
+
+  	   <ion-avatar item-start>  
+         <img width="80" height="80" style="margin: auto;" src="assets/imgs/logo_wom.png">
+    </ion-avatar>
+    <ion-list>
+      <ion-item>
+
+
+
+	<!-- <ion-avatar item-left>
+        <ion-img [src]="../assets/imgs/logo.png"></ion-img>
+      </ion-avatar> -->
+
+
+        <ion-icon name="mail" item-start></ion-icon>
+        <ion-label stacked>Email:</ion-label>
+        <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
+      </ion-item>
+            <ion-item>
+        <ion-icon name="lock" item-start></ion-icon>
+        <ion-label stacked>Contraseña:</ion-label>
+        <ion-input formControlName="pass" type="password" placeholder="Contraseña"></ion-input>
+      </ion-item>
+
+
+     
+    
+
+    </ion-list>
+    <div padding>
+      <button class="ionbtn" ion-button block type="submit" >Aceptar</button>
+    </div>
+  </form>
 </ion-content>

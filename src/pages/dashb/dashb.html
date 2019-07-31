@@ -1,0 +1,128 @@
+<ion-header >
+  <ion-navbar color="#3D1051" hideBackButton="true">
+     <ion-avatar slot="start" style="display:inline-block;margin:0" >  
+<img width="80" height="80"  src="assets/imgs/logo_wom.png">
+         
+    </ion-avatar>
+    <ion-title class="" style="display:inline-block;" >Wom Portal - Sasyr</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+<ion-content padding>
+<br>
+  <h3>DAILY PROGRESS </h3>
+  <h4>Subtel Approvals ( {{ftitulo}} / accum)</h4>
+    <ion-grid>
+  <ion-row>
+    <ion-col>
+      Applications submitted 
+    </ion-col>
+    <ion-col>
+       {{submitted}} / {{acumsubmitted}}
+    </ion-col></ion-row>
+    <ion-row>
+    <ion-col>      
+    Approvals
+    </ion-col>
+    <ion-col>
+      {{approvals}} / {{acumapprovals}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>      
+    Rejections
+    </ion-col>
+    <ion-col>
+      {{rejections}} / {{acumrejections}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>      
+    Site Receptions
+    </ion-col>
+    <ion-col>
+      {{receptions}} / {{acumreceptions}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>      
+    Microwave Applied
+    </ion-col>
+    <ion-col>
+      {{micro_applied}} / {{acummicro_applied}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>      
+    Microwave Approved
+    </ion-col>
+    <ion-col>
+      {{micro_approved}} / {{acummicro_approved}}
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  <h4>W{{week}} Sites</h4>
+  <div>
+    <div style="display: block">
+      <canvas baseChart  height="300"
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [colors]="barChartColors"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+   
+  </div>
+  <br>
+  <h4>W{{week}} Sites Accumilated</h4>
+  
+  <div>
+    <div style="display: block">
+      <canvas baseChart  height="300"
+              [datasets]="barChartDataAcum"
+              [labels]="barChartLabelsAcum"
+              [options]="barChartOptionsAcum"
+              [colors]="barChartColorsAcum"
+              [legend]="barChartLegendAcum"
+              [chartType]="barChartTypeAcum"
+              ></canvas>
+    </div>
+
+  </div>
+<br>
+  <h4>W{{week}} Radiolinks</h4>
+  
+  <div>
+    <div style="display: block">
+      <canvas baseChart  height="300"
+              [datasets]="barChartDataMicro"
+              [labels]="barChartLabelsMicro"
+              [options]="barChartOptionsMicro"
+              [colors]="barChartColorsMicro"
+              [legend]="barChartLegendMicro"
+              [chartType]="barChartTypeMicro"
+              ></canvas>
+    </div>
+   
+  </div>
+<br>
+  <h4>W{{week}} Radiolinks Accumulated</h4>
+  
+  <div>
+    <div style="display: block">
+      <canvas baseChart  height="300"
+              [datasets]="barChartDataMicroAcum"
+              [labels]="barChartLabelsMicroAcum"
+              [options]="barChartOptionsMicroAcum"
+              [colors]="barChartColorsMicroAcum"
+              [legend]="barChartLegendMicroAcum"
+              [chartType]="barChartTypeMicroAcum"
+              ></canvas>
+    </div>
+ 
+  </div>
+
+</ion-content>
